@@ -44,9 +44,9 @@ class PluginReplace extends Plugin implements ICompilable
     public static function compile(Compiler $compiler, $value, $search, $replace, $case_sensitive = true)
     {
         if ($case_sensitive == 'false' || (bool)$case_sensitive === false) {
-            return 'str_ireplace(' . $search . ', ' . $replace . ', ' . $value . ')';
+            return 'str_ireplace(' . $search . ', ' . $replace . ', ' . $value . ' ?? \'\')';
         } else {
-            return 'str_replace(' . $search . ', ' . $replace . ', ' . $value . ')';
+            return 'str_replace(' . $search . ', ' . $replace . ', ' . $value . ' ?? \'\')';
         }
     }
 }
