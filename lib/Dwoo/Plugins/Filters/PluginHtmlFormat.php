@@ -76,8 +76,8 @@ class PluginHtmlFormat extends Filter
      */
     protected static function tagDispatcher($input)
     {
-        // textarea, pre, code tags and comments are to be left alone to avoid any non-wanted whitespace inside them so it just outputs them as they were
-        if (substr($input[1], 0, 9) == '<textarea' || substr($input[1], 0, 4) == '<pre' || substr($input[1], 0, 5) == '<code' || substr($input[1], 0, 4) == '<!--' || substr($input[1], 0, 9) == '<![CDATA[') {
+        // textarea, pre, and code tags are to be left alone to avoid any non-wanted whitespace inside them so it just outputs them as they were
+        if (substr($input[1], 0, 9) == '<textarea' || substr($input[1], 0, 4) == '<pre' || substr($input[1], 0, 5) == '<code' || substr($input[1], 0, 9) == '<![CDATA[') {
             return $input[1] . $input[3];
         }
         // closing textarea, code and pre tags and self-closed tags (i.e. <br />) are printed as singleTags because we didn't use openTag for the formers and the latter is a single tag
