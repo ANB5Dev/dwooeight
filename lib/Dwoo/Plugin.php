@@ -70,7 +70,7 @@ abstract class Plugin
      *
      * @return string
      */
-    public static function paramsToAttributes(array $params, $delim = '\'', Compiler $compiler = null)
+    public static function paramsToAttributes(array $params, $delim = '\'', ?Compiler $compiler = null)
     {
         if (isset($params['*'])) {
             $params = array_merge($params, $params['*']);
