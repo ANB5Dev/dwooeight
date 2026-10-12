@@ -157,5 +157,5 @@ interface ITemplate
      * @return ITemplate|false|null
      */
     public static function templateFactory(Core $core, $resourceId, $cacheTime = null, $cacheId = null,
-                                           $compileId = null, ITemplate $parentTemplate = null);
+                                           $compileId = null, ?ITemplate $parentTemplate = null);
 }
