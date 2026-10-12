@@ -80,7 +80,7 @@ interface ITemplate
      *
      * @return string
      */
-    public function getCompiledTemplate(Core $core, ICompiler $compiler = null);
+    public function getCompiledTemplate(Core $core, ?ICompiler $compiler = null);
 
     /**
      * Returns the template name.
